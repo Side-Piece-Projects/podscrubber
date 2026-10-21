@@ -1,0 +1,65 @@
+:root {
+  --bg: #f7f7f9;
+  --surface: #ffffff;
+  --border: #e1dfe6;
+  --text: #19171c;
+  --text-2: #635e6c;
+  --accent: #7c4dbd;
+  --accent-soft: #eee8fb;
+
+  color-scheme: light dark;
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18161b;
+    --surface: #201e25;
+    --border: #33303a;
+    --text: #eeedf1;
+    --text-2: #aba6b4;
+    --accent: #a47ee1;
+    --accent-soft: #332648;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+
+.page { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+
+header.site { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 48px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; }
+.brand-mark {
+  display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px;
+  background: var(--accent); color: #fff;
+}
+nav a { color: var(--text-2); text-decoration: none; margin-left: 18px; }
+nav a:hover, nav a[aria-current="page"] { color: var(--accent); }
+
+h1 { font-size: 40px; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+h2 { font-size: 22px; margin: 40px 0 8px; }
+h3 { font-size: 17px; margin: 24px 0 4px; }
+p, li { color: var(--text-2); }
+strong { color: var(--text); }
+a { color: var(--accent); }
+.lead { font-size: 20px; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 32px 0; padding: 0; list-style: none; }
+.features li { padding: 16px 18px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.features strong { display: block; margin-bottom: 4px; }
+
+.note { padding: 14px 18px; border-radius: 12px; background: var(--accent-soft); }
+.note p { margin: 0; color: var(--text); }
+
+footer.site { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-2); }
+
+@media (max-width: 520px) {
+  h1 { font-size: 30px; }
+  header.site { flex-direction: column; align-items: flex-start; }
+  nav a:first-child { margin-left: 0; }
+}
